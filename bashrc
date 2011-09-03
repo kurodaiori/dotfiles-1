@@ -61,6 +61,6 @@ export PATH=`brew --prefix python`/bin:$PATH
 export PERL_CPANM_OPT="--local-lib=~/perl5"
 export PATH=$PATH:~/perl5/bin
 export PERL5LIB=$PERL5LIB:~/perl5/lib/perl5
-if [ -f ~/perl5/perlbrew/etc/bashrc]; then
+if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
