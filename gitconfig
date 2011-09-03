@@ -1,0 +1,14 @@
+[user]
+	name = Shin Kojima
+	email = shin@kojima.org
+[color]
+        ui = true
+[merge]
+	tool = vimdiff
+[core]
+	excludesfile = /Users/kojima/.gitignore
+[mergetool]
+	keepBackup = false
+[github]
+	user = bluebug
+	token = 404f22273261e98ef132b14cb51765e9

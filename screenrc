@@ -1,0 +1,6 @@
+escape ^Zz
+autodetach on
+hardstatus alwayslastline "%`%-w%{=b kw}%n %t%{-}%+w"
+shelltitle "$ |bash"
+startup_message off
+defscrollback 30000
