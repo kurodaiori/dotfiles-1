@@ -3,6 +3,6 @@ for f in ~/dotfiles/*
 do
     case "${f##*/}" in
         INSTALL );; # This installer.
-        * ) ln -s "$f" "$HOME/.${f##*/}";;
+        * ) ln -fs "$f" "$HOME/.${f##*/}";;
     esac
 done
