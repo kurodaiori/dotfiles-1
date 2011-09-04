@@ -70,7 +70,6 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#CompleteCpp
-autocmd FileType perl set omnifunc=perlcomplete#CompletePERL
 
 " auto-indentation
 filetype indent on
@@ -92,8 +91,3 @@ endif
 if has('gui_macvim')
     set guifont=Osaka-Mono:h14
 endif
-
-function! VisualScrollBar()
-    let topline = line("w0")
-    let bottomline = line("w$")
-endfunction
