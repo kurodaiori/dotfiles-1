@@ -14,6 +14,7 @@ set ambiwidth=double
 set fdm=marker
 set tags+=tags;
 set cscopetag
+set fo=1tcqmnB
 
 " key behaviour
 set backspace=2
