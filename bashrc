@@ -61,3 +61,7 @@ export PERL5LIB=$PERL5LIB:~/perl5/lib/perl5
 if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
+
+#python
+export WORKON_HOME=$HOME/.virtualenvs
+source `which virtualenvwrapper.sh`
