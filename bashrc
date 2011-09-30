@@ -64,4 +64,6 @@ fi
 
 #python
 export WORKON_HOME=$HOME/.virtualenvs
-source `which virtualenvwrapper.sh`
+if [ "`type -P virtualenvwrapper.sh`" != "" ]; then
+    source `type -P virtualenvwrapper.sh`
+fi
