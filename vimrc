@@ -6,7 +6,6 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=8
 set expandtab
-set smartindent
 set scrolloff=3
 set wildmode=list,full
 set title
