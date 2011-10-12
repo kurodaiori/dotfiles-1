@@ -39,7 +39,7 @@ dist
 build
 eggs
 parts
-bin
+#bin
 develop-eggs
 .installed.cfg
 
