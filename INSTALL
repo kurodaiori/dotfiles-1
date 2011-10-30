@@ -1,13 +1,10 @@
 #!/bin/sh
 for f in ~/dotfiles/*
 do
-    case "${f##*/}" in
-        INSTALL );; # This installer.
-        bashrc )
-            case "$(uname)" in
-                Linux ) ln -fs "$f" "$HOME/.bash_aliases";;
-            esac
-        ;;
-        * ) ln -fs "$f" "$HOME/.${f##*/}";;
+    bn="$(basename "$f")"
+    case "$bn" in
+        INSTALL ) bn="";; # This installer.
+        bashrc ) [ "$(uname)" = "Linux" ] && bn="bash_aliases";;
     esac
+    [ "$bn" != "" ] && ln -fs "$f" "$HOME/.$bn"
 done
