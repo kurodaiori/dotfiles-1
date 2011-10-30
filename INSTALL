@@ -3,6 +3,11 @@ for f in ~/dotfiles/*
 do
     case "${f##*/}" in
         INSTALL );; # This installer.
+        bashrc )
+            case "$(uname)" in
+                Linux ) ln -fs "$f" "$HOME/.bash_aliases";;
+            esac
+        ;;
         * ) ln -fs "$f" "$HOME/.${f##*/}";;
     esac
 done
