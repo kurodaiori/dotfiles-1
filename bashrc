@@ -69,3 +69,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 if [ -f "`type -P virtualenvwrapper.sh`" ]; then
     source `type -P virtualenvwrapper.sh`
 fi
+
+#ruby
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
