@@ -1,0 +1,13 @@
+--recurse
+--totals
+
+--langmap=Perl:+.t
+--exclude=blib
+
+--langdef=js
+--langmap=js:.js
+--regex-js=/([A-Za-z0-9_$]+)[ \t]*[:=][ \t]*\[/\1/,array/
+--regex-js=/([A-Za-z0-9_$]+)[ \t]*[:=][ \t]*\{/\1/,object/
+--regex-js=/function[ \t]+([A-Za-z0-9._$]+\.)?([A-Za-z0-9_$]+)[ \t]*([^)])/\2/,function/
+--regex-js=/([A-Za-z0-9_$]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/,function/
+

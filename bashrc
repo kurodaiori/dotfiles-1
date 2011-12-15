@@ -73,5 +73,3 @@ fi
 #ruby
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-#ctags
-alias perltags="ctags -f tags --recurse --totals --exclude=blib --languages=Perl --langmap=Perl:+.t"
