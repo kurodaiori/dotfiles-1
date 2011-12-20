@@ -18,7 +18,7 @@ set fo=1tcqmnB
 " key behaviour
 set backspace=2
 set virtualedit=all
-map gl :set invwrap<CR>
+map <Leader>w :set invwrap<CR>:set wrap?<CR>
 imap <C-f> <C-x><C-o>
 cmap w!! w !sudo tee > /dev/null %
 nnoremap <C-p> "*p
