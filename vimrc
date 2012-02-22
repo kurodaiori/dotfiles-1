@@ -62,14 +62,14 @@ set nobackup
 set history=10000
 
 " omni-completion
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#CompleteCpp
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType c setlocal omnifunc=ccomplete#CompleteCpp
 
 " auto-indentation
 filetype indent on
@@ -77,8 +77,11 @@ filetype indent on
 " perl
 autocmd FileType perl :compiler perl
 let g:perl_compiler_force_warnings = 0
-au BufNewFile,BufRead *.psgi set filetype=perl
-au BufNewFile,BufRead *.mt set filetype=html
+au BufNewFile,BufRead *.psgi setlocal filetype=perl
+au BufNewFile,BufRead *.mt setlocal filetype=html
+
+" html
+autocmd FileType html setlocal ts=2 sw=2 sts=2
 
 " auto quickfix mode
 autocmd QuickfixCmdPost vimgrep cw
