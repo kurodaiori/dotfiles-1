@@ -1,3 +1,11 @@
+"Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'vim-coffee-script'
+filetype plugin indent on
+
 " appearance
 syntax on
 set number
@@ -13,7 +21,7 @@ set ambiwidth=double
 set fdm=marker
 set tags+=tags;
 set cscopetag
-set fo=1tcqmnB
+set fo=1tcqwmnB
 
 " key behaviour
 set backspace=2
@@ -62,23 +70,23 @@ set nobackup
 set history=10000
 
 " omni-completion
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#CompleteCpp
-
-" auto-indentation
-filetype indent on
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType c setlocal omnifunc=ccomplete#CompleteCpp
 
 " perl
 autocmd FileType perl :compiler perl
 let g:perl_compiler_force_warnings = 0
-au BufNewFile,BufRead *.psgi set filetype=perl
-au BufNewFile,BufRead *.mt set filetype=html
+au BufNewFile,BufRead *.psgi setlocal filetype=perl
+au BufNewFile,BufRead *.mt setlocal filetype=html
+
+" html
+autocmd FileType html setlocal ts=2 sw=2 sts=2
 
 " python
 let python_highlight_all = 1
