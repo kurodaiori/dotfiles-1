@@ -1,3 +1,11 @@
+"Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'vim-coffee-script'
+filetype plugin indent on
+
 " appearance
 syntax on
 set number
@@ -13,7 +21,7 @@ set ambiwidth=double
 set fdm=marker
 set tags+=tags;
 set cscopetag
-set fo=1tcqmnB
+set fo=1tcqwmnB
 
 " key behaviour
 set backspace=2
@@ -70,9 +78,6 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType c setlocal omnifunc=ccomplete#CompleteCpp
-
-" auto-indentation
-filetype indent on
 
 " perl
 autocmd FileType perl :compiler perl
