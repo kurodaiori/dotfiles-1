@@ -80,6 +80,9 @@ let g:perl_compiler_force_warnings = 0
 au BufNewFile,BufRead *.psgi set filetype=perl
 au BufNewFile,BufRead *.mt set filetype=html
 
+" python
+let python_highlight_all = 1
+
 " auto quickfix mode
 autocmd QuickfixCmdPost vimgrep cw
 
