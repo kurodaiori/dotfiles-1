@@ -54,7 +54,7 @@ export PROMPT_COMMAND="history -a; history -c; history -r;"
 # show current branch.
 type __git_ps1 >/dev/null 2>&1 && PS1='\u:\h \W$(__git_ps1 "[%s]")\$ ';
 
-PS1='\[\033k\033\134\]'$PS1  #screen
+PS1="`printf '\[\033k\033\134\134\]'`$PS1"  #screen
 
 #cpanm
 export PERL_CPANM_OPT="--local-lib=~/perl5"
