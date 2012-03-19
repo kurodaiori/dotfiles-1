@@ -6,5 +6,5 @@ do
         INSTALL ) bn="";; # This installer.
         bashrc ) [ "$(uname)" = "Linux" ] && bn="bash_aliases";;
     esac
-    [ "$bn" != "" ] && ln -fs "$f" "$HOME/.$bn"
+    [ "$bn" != "" ] && ln -fhs "$f" "$HOME/.$bn"
 done
