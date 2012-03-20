@@ -91,6 +91,9 @@ autocmd FileType html setlocal ts=2 sw=2 sts=2
 " python
 let python_highlight_all = 1
 
+" sh
+autocmd FileType sh setlocal ts=4 sw=4 sts=4 noexpandtab
+
 " auto quickfix mode
 autocmd QuickfixCmdPost vimgrep cw
 
