@@ -66,6 +66,8 @@ set fileformat=unix
 
 " backup
 set nobackup
+set noswapfile
+set nowritebackup
 "set backupdir=.
 set history=10000
 
