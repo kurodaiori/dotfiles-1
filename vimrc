@@ -98,12 +98,3 @@ autocmd FileType sh setlocal ts=4 sw=4 sts=4 noet
 
 " auto quickfix mode
 autocmd QuickfixCmdPost vimgrep cw
-
-if has('gui')
-    colorscheme slate
-    set antialias
-endif
-
-if has('gui_macvim')
-    set guifont=Osaka-Mono:h14
-endif
