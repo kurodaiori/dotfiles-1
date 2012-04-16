@@ -44,7 +44,7 @@ export PATH=~/bin:$PATH # user scripts
 export VTE_CJK_WIDTH=1 #ambiwidth
 
 # bash history settings
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE="ls:cd*:history*"
 export HISTSIZE=10000
 shopt -s histappend
