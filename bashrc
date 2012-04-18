@@ -5,14 +5,15 @@ case "$(uname)" in
         export LSCOLORS=ExFxCxDxBxegedabagacad
 
         #oracle
-        export ORACLE_HOME=$HOME/Oracle/instantclient_10_2
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
+        export ORACLE_HOME="$HOME/Oracle/instantclient_10_2"
+        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$ORACLE_HOME"
         export DYLD_LIBRARY_PATH="$ORACLE_HOME:$DYLD_LIBRARY_PATH"
-        export DYLIB_LIBRARY_PATH=$ORACLE_HOME
-        export TNS_ADMIN=$ORACLE_HOME
-        export PATH=$ORACLE_HOME:$PATH
+        export DYLIB_LIBRARY_PATH="$ORACLE_HOME"
+        export TNS_ADMIN="$ORACLE_HOME"
+        export PATH="$ORACLE_HOME:$PATH"
         export NLS_LANG=Japanese_Japan.UTF8
-        export SQLPATH=$ORACLE_HOME
+        export SQLPATH="$ORACLE_HOME"
+		export VERSIONER_PERL_PREFER_32_BIT=yes
 
         # rlwrap
         alias sqlplus="rlwrap sqlplus"
