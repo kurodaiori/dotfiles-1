@@ -38,6 +38,10 @@ case "$(uname)" in
         export PATH=`brew --prefix`/sbin:$PATH
         export PATH=`brew --prefix`/share/python:$PATH
         export PATH=`brew --prefix python`/bin:$PATH
+
+        if [ -d "$HOME/.cabal/bin" ]; then
+            export PATH="$HOME/.cabal/bin:$PATH"
+        fi
     ;;
 esac
 
