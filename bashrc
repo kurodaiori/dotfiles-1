@@ -13,7 +13,7 @@ case "$(uname)" in
         export PATH="$ORACLE_HOME:$PATH"
         export NLS_LANG=Japanese_Japan.UTF8
         export SQLPATH="$ORACLE_HOME"
-		export VERSIONER_PERL_PREFER_32_BIT=yes
+        export VERSIONER_PERL_PREFER_32_BIT=yes
 
         # rlwrap
         alias sqlplus="rlwrap sqlplus"
