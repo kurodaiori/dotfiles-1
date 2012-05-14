@@ -1,5 +1,6 @@
 --recurse
 --totals
+--extra=f
 
 --langmap=Perl:+.t
 --exclude=blib
