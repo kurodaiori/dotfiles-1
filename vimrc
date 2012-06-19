@@ -62,7 +62,6 @@ set fileformat=unix
 set nobackup
 set noswapfile
 set nowritebackup
-"set backupdir=.
 set history=10000
 
 " omni-completion
