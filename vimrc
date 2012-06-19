@@ -1,9 +1,3 @@
-"Vundle
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'vim-coffee-script'
 filetype plugin indent on
 
 " appearance
