@@ -89,5 +89,9 @@ let python_highlight_all = 1
 " sh
 autocmd FileType sh setlocal ts=4 sw=4 sts=4 noet
 
+" asp
+let g:filetype_asp = "aspvbs"
+autocmd FileType aspvbs setlocal ts=4 sw=4 sts=4 noet
+
 " auto quickfix mode
 autocmd QuickfixCmdPost vimgrep cw
