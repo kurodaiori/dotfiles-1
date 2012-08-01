@@ -62,9 +62,6 @@ type __git_ps1 >/dev/null 2>&1 && PS1='\u:\h \W$(__git_ps1 "[%s]")\$ ';
 PS1="`printf '\[\033k\033\134\134\]'`$PS1"  #screen
 
 #cpanm
-export PERL_CPANM_OPT="--local-lib=~/perl5"
-export PATH=$PATH:~/perl5/bin
-export PERL5LIB=$PERL5LIB:~/perl5/lib/perl5
 if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
