@@ -21,8 +21,6 @@ set fo=1tcqwmnB
 set backspace=2
 set virtualedit=all
 map <Leader>w :set invwrap<CR>:set wrap?<CR>
-map n nzz
-map N Nzz
 imap <C-f> <C-x><C-o>
 cmap w!! w !sudo tee > /dev/null %
 nnoremap <C-p> "*p
