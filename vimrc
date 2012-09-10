@@ -18,6 +18,7 @@ set cscopetag
 set fo=1tcqwmnB
 
 " key behaviour
+:source $VIMRUNTIME/macros/matchit.vim
 set backspace=2
 set virtualedit=all
 map <Leader>w :set invwrap<CR>:set wrap?<CR>
