@@ -21,9 +21,9 @@ set fo=1tcqwmnB
 :source $VIMRUNTIME/macros/matchit.vim
 set backspace=2
 set virtualedit=all
-map <Leader>w :set invwrap<CR>:set wrap?<CR>
-imap <C-f> <C-x><C-o>
-cmap w!! w !sudo tee > /dev/null %
+nmap <Leader>w :set invwrap<CR>:set wrap?<CR>
+inoremap <C-f> <C-x><C-o>
+cnoremap w!! w !sudo tee > /dev/null %
 nnoremap <C-p> "*p
 :ab <html> <html><CR><Tab><head><CR><Tab><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><CR><title>Site Title</title><CR><BS></head><CR><body><CR></body><CR><BS></html><Esc>:set ft=html<CR>4k4w
 :ab --- #--------------------------------------------------------------------#
