@@ -95,4 +95,24 @@ let g:filetype_asp = "aspvbs"
 au FileType aspvbs setl ts=4 sw=4 sts=4 noet
 
 " auto quickfix mode
-autocmd QuickfixCmdPost vimgrep cw
+au QuickfixCmdPost vimgrep cw
+
+" markdown
+au BufNewFile,BufRead *.md setl filetype=markdown
+
+fun! DrawUnderline(c)
+    let l:cr= "\n"
+    try
+        let l:prev = getline(line('.') - 1)
+        if strlen(substitute(l:prev, '\s', '', 'g')) < 1
+            throw prev_line_is_empty
+        endif
+        return repeat(a:c, strdisplaywidth(l:prev)) . l:cr
+    catch
+        return repeat(a:c, 79) . l:cr
+    endt
+endf
+
+au FileType markdown setl ai tw=79
+            \| ia <expr> <buffer> --- DrawUnderline('-')
+            \| ia <expr> <buffer> === DrawUnderline('=')
