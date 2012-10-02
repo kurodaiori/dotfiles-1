@@ -18,18 +18,18 @@ set cscopetag
 set fo=1tcqwmnB
 
 " key behaviour
-:source $VIMRUNTIME/macros/matchit.vim
+source $VIMRUNTIME/macros/matchit.vim
 set backspace=2
 set virtualedit=all
 nmap <Leader>w :set invwrap<CR>:set wrap?<CR>
 inoremap <C-f> <C-x><C-o>
 cnoremap w!! w !sudo tee > /dev/null %
 nnoremap <C-p> "*p
-:ab <html> <html><CR><Tab><head><CR><Tab><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><CR><title>Site Title</title><CR><BS></head><CR><body><CR></body><CR><BS></html><Esc>:set ft=html<CR>4k4w
-:ab --- #--------------------------------------------------------------------#
-:ab TODO: TODO(shin@kojima.org):
-:ab XXX: XXX(shin@kojima.org):
-:ab FIXME: FIXME(shin@kojima.org):
+ia <html> <html><CR><Tab><head><CR><Tab><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><CR><title>Site Title</title><CR><BS></head><CR><body><CR></body><CR><BS></html><Esc>:set ft=html<CR>4k4w
+ia --- #--------------------------------------------------------------------#
+ia TODO: TODO(shin@kojima.org):
+ia XXX: XXX(shin@kojima.org):
+ia FIXME: FIXME(shin@kojima.org):
 nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>
@@ -66,33 +66,33 @@ set nowritebackup
 set history=10000
 
 " omni-completion
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html,xhtml setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-autocmd FileType c setlocal omnifunc=ccomplete#CompleteCpp
+au FileType python setl omnifunc=pythoncomplete#Complete
+au FileType ruby,eruby setl omnifunc=rubycomplete#Complete
+au FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
+au FileType html,xhtml setl omnifunc=htmlcomplete#CompleteTags
+au FileType css setl omnifunc=csscomplete#CompleteCSS
+au FileType xml setl omnifunc=xmlcomplete#CompleteTags
+au FileType php setl omnifunc=phpcomplete#CompletePHP
+au FileType c setl omnifunc=ccomplete#CompleteCpp
 
 " perl
-autocmd FileType perl :compiler perl
+au FileType perl :compiler perl
 let g:perl_compiler_force_warnings = 0
-au BufNewFile,BufRead *.psgi setlocal filetype=perl
-au BufNewFile,BufRead *.mt setlocal filetype=html
+au BufNewFile,BufRead *.psgi setl filetype=perl
+au BufNewFile,BufRead *.mt setl filetype=html
 
 " html
-autocmd FileType html,xhtml setlocal ts=2 sw=2 sts=2
+au FileType html,xhtml setl ts=2 sw=2 sts=2
 
 " python
 let python_highlight_all = 1
 
 " sh
-autocmd FileType sh setlocal ts=4 sw=4 sts=4 noet
+au FileType sh setl ts=4 sw=4 sts=4 noet
 
 " asp
 let g:filetype_asp = "aspvbs"
-autocmd FileType aspvbs setlocal ts=4 sw=4 sts=4 noet
+au FileType aspvbs setl ts=4 sw=4 sts=4 noet
 
 " auto quickfix mode
 autocmd QuickfixCmdPost vimgrep cw
