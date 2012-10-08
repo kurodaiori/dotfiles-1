@@ -79,7 +79,7 @@ au FileType c setl omnifunc=ccomplete#CompleteCpp
 au FileType perl :compiler perl
 let g:perl_compiler_force_warnings = 0
 au BufNewFile,BufRead *.psgi setl filetype=perl
-au BufNewFile,BufRead *.mt setl filetype=html
+au BufNewFile,BufRead *.mt,*.tt setl filetype=xhtml
 
 " html
 au FileType html,xhtml setl ts=2 sw=2 sts=2
