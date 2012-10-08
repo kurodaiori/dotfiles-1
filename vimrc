@@ -25,7 +25,6 @@ nmap <Leader>w :set invwrap<CR>:set wrap?<CR>
 inoremap <C-f> <C-x><C-o>
 cnoremap w!! w !sudo tee > /dev/null %
 nnoremap <C-p> "*p
-ia <html> <html><CR><Tab><head><CR><Tab><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><CR><title>Site Title</title><CR><BS></head><CR><body><CR></body><CR><BS></html><Esc>:set ft=html<CR>4k4w
 ia --- #--------------------------------------------------------------------#
 ia TODO: TODO(shin@kojima.org):
 ia XXX: XXX(shin@kojima.org):
