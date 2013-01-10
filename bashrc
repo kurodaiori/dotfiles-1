@@ -31,6 +31,9 @@ case "$(uname)" in
         export PATH=`brew --prefix`/share/python:$PATH
         export PATH=`brew --prefix python`/bin:$PATH
 
+        export LC_CTYPE=ja_JP.UTF-8
+        export LC_ALL=ja_JP.UTF-8
+
         if [ -d "$HOME/.cabal/bin" ]; then
             export PATH="$HOME/.cabal/bin:$PATH"
         fi
