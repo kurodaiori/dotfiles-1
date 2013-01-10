@@ -18,6 +18,9 @@ case "$(uname)" in
         if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
             . `brew --prefix`/etc/bash_completion.d/git-completion.bash
         fi
+        if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
+            . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+        fi
 
         # Mac2Mac ssh 
         export LANG=ja_JP.UTF-8
