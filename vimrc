@@ -22,7 +22,6 @@ source $VIMRUNTIME/macros/matchit.vim
 set backspace=2
 set virtualedit=all
 nmap <Leader>w :set invwrap<CR>:set wrap?<CR>
-inoremap <C-f> <C-x><C-o>
 cnoremap w!! w !sudo tee > /dev/null %
 nnoremap <C-p> "*p
 ia --- #--------------------------------------------------------------------#
@@ -65,6 +64,9 @@ set nowritebackup
 set history=10000
 
 " omni-completion
+set cpt=t,i
+set cot=longest,menuone
+hi Pmenu ctermbg=6
 au FileType python setl omnifunc=pythoncomplete#Complete
 au FileType ruby,eruby setl omnifunc=rubycomplete#Complete
 au FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
