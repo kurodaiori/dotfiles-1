@@ -37,6 +37,10 @@ case "$(uname)" in
         if [ -d "$HOME/.cabal/bin" ]; then
             export PATH="$HOME/.cabal/bin:$PATH"
         fi
+
+        if [ -d "/usr/local/share/npm/bin" ]; then
+            export PATH="/usr/local/share/npm/bin":$PATH
+        fi
     ;;
 esac
 
