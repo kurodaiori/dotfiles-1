@@ -95,6 +95,10 @@ au FileType sh setl ts=4 sw=4 sts=4 noet
 let g:filetype_asp = "aspvbs"
 au FileType aspvbs setl ts=4 sw=4 sts=4 noet
 
+" go
+set rtp+=$GOROOT/misc/vim
+au BufNewFile,BufRead *.go setl filetype=go
+
 " auto quickfix mode
 au QuickfixCmdPost vimgrep cw
 
