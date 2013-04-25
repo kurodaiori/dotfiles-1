@@ -6,7 +6,7 @@
 [merge]
 	tool = vimdiff
 [core]
-	excludesfile = /Users/kojima/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim
 [mergetool]
 	keepBackup = false
