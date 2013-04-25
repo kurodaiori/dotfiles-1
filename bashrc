@@ -41,6 +41,13 @@ case "$(uname)" in
         if [ -d "/usr/local/share/npm/bin" ]; then
             export PATH="/usr/local/share/npm/bin":$PATH
         fi
+
+        if [ -d "$(brew --prefix go)" ]; then
+            export GOROOT="$(brew --prefix go)"
+            export GOPATH="$HOME/mygo"
+            export PATH="$PATH:$GOROOT/bin"
+            export PATH="$PATH:$GOPATH/bin"
+        fi
     ;;
 esac
 

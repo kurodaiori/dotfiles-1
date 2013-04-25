@@ -95,9 +95,17 @@ let python_highlight_all = 1
 " sh
 au FileType sh setl ts=4 sw=4 sts=4 noet
 
+" php
+au FileType php setl makeprg=php\ -l\ %
+au FileType php setl errorformat=%m\ in\ %f\ on\ line\ %l
+
 " asp
 let g:filetype_asp = "aspvbs"
 au FileType aspvbs setl ts=4 sw=4 sts=4 noet
+
+" go
+set rtp+=$GOROOT/misc/vim
+au BufNewFile,BufRead *.go setl filetype=go
 
 " auto quickfix mode
 au QuickfixCmdPost vimgrep cw
