@@ -69,7 +69,6 @@ set cot=longest,menuone
 hi Pmenu ctermbg=6
 au FileType python setl omnifunc=pythoncomplete#Complete
 au FileType ruby,eruby setl omnifunc=rubycomplete#Complete
-au FileType javascript setl omnifunc=javascriptcomplete#CompleteJS
 au FileType html,xhtml setl omnifunc=htmlcomplete#CompleteTags
 au FileType css setl omnifunc=csscomplete#CompleteCSS
 au FileType xml setl omnifunc=xmlcomplete#CompleteTags
@@ -83,7 +82,12 @@ au BufNewFile,BufRead *.psgi setl filetype=perl
 au BufNewFile,BufRead *.mt,*.tt setl filetype=xhtml
 
 " html
-au FileType html,xhtml setl ts=2 sw=2 sts=2
+au FileType html,xhtml setl ts=2 sw=2 sts=2 smc=0
+
+" javascript
+au FileType javascript setl ofu=javascriptcomplete#CompleteJS
+            \| setl makeprg=jshint\ %
+            \| setl efm=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G,%-G%s\ error,%-G%s\ errors
 
 " python
 let python_highlight_all = 1
@@ -97,6 +101,7 @@ au FileType aspvbs setl ts=4 sw=4 sts=4 noet
 
 " auto quickfix mode
 au QuickfixCmdPost vimgrep cw
+au QuickfixCmdPost make cw
 
 " markdown
 au BufNewFile,BufRead *.md setl filetype=markdown
