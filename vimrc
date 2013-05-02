@@ -118,6 +118,6 @@ fun! DrawUnderline(c)
     endt
 endf
 
-au FileType markdown setl ai tw=79
+au FileType markdown setl ai
             \| ia <expr> <buffer> --- DrawUnderline('-')
             \| ia <expr> <buffer> === DrawUnderline('=')
