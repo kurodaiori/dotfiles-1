@@ -58,13 +58,15 @@ set history=10000
 set cpt=t,i
 set cot=longest,menuone
 hi Pmenu ctermbg=6
-au FileType python setl omnifunc=pythoncomplete#Complete
+
+" ruby
 au FileType ruby,eruby setl omnifunc=rubycomplete#Complete
-au FileType html,xhtml setl omnifunc=htmlcomplete#CompleteTags
-au FileType css setl omnifunc=csscomplete#CompleteCSS
-au FileType xml setl omnifunc=xmlcomplete#CompleteTags
-au FileType php setl omnifunc=phpcomplete#CompletePHP
+
+" c
 au FileType c setl omnifunc=ccomplete#CompleteCpp
+
+" xml
+au FileType xml setl omnifunc=xmlcomplete#CompleteTags
 
 " perl
 au FileType perl :compiler perl
@@ -72,8 +74,9 @@ let g:perl_compiler_force_warnings = 0
 au BufNewFile,BufRead *.psgi setl filetype=perl
 au BufNewFile,BufRead *.mt,*.tt setl filetype=xhtml
 
-" html
-au FileType html,xhtml setl ts=2 sw=2 sts=2 smc=0
+" html/css
+au FileType html,xhtml setl ts=2 sw=2 sts=2 ofu=htmlcomplete#CompleteTags
+au FileType css setl omnifunc=csscomplete#CompleteCSS
 
 " javascript
 au FileType javascript setl ofu=javascriptcomplete#CompleteJS
@@ -82,13 +85,17 @@ au FileType javascript setl ofu=javascriptcomplete#CompleteJS
 
 " python
 let python_highlight_all = 1
+au FileType python setl ofu=pythoncomplete#Complete
+            \| setl makeprg=pep8\ %
+            \| setl errorformat=%m\ in\ %f\ on\ line\ %l
 
 " sh
 au FileType sh setl ts=4 sw=4 sts=4 noet
 
 " php
-au FileType php setl makeprg=php\ -l\ %
-au FileType php setl errorformat=%m\ in\ %f\ on\ line\ %l
+au FileType php setl ofu=phpcomplete#CompletePHP
+            \| setl makeprg=php\ -l\ %
+            \| setl errorformat=%m\ in\ %f\ on\ line\ %l
 
 " asp
 let g:filetype_asp = "aspvbs"
