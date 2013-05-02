@@ -15,7 +15,7 @@ set ambiwidth=double
 set fdm=marker
 set tags+=tags;
 set cscopetag
-set fo=1cqwmnB
+set fo=1cqwmnBj
 
 " key behaviour
 source $VIMRUNTIME/macros/matchit.vim
