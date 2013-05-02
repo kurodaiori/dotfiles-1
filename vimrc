@@ -23,6 +23,8 @@ set backspace=2
 set virtualedit=all
 nmap <Leader>w :set invwrap<CR>:set wrap?<CR>
 cnoremap w!! w !sudo tee > /dev/null %
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 nnoremap <C-p> "*p
 ia --- #--------------------------------------------------------------------#
 ia TODO: TODO(shin@kojima.org):
