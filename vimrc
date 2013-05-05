@@ -21,7 +21,8 @@ set fo=1cqwmnBj
 source $VIMRUNTIME/macros/matchit.vim
 set backspace=2
 set virtualedit=all
-nmap <Leader>w :set invwrap<CR>:set wrap?<CR>
+nnoremap <Leader>w :set invwrap<CR>:set wrap?<CR>
+nnoremap gm :make<CR>:botright copen
 cnoremap w!! w !sudo tee > /dev/null %
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
