@@ -106,9 +106,10 @@ au FileType aspvbs setl ts=4 sw=4 sts=4 noet
 set rtp+=$GOROOT/misc/vim
 au BufNewFile,BufRead *.go setl filetype=go
 
-" auto quickfix mode
-au QuickfixCmdPost vimgrep cw
-au QuickfixCmdPost make cw
+" quickfix
+au BufRead quickfix setl modifiable
+            \| silent exe "%!perl -ple '$_ = sprintf q{\\%s|\\%3s \\%s \\%2s|\\%s}, split qr{[| ]}, $_, 5'"
+            \| setl nomodifiable
 
 " markdown
 au BufNewFile,BufRead *.md setl filetype=markdown
