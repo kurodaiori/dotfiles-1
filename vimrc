@@ -77,7 +77,8 @@ au BufNewFile,BufRead *.psgi setl filetype=perl
 au BufNewFile,BufRead *.mt,*.tt setl filetype=xhtml
 
 " html/css
-au FileType html,xhtml setl ts=2 sw=2 sts=2 ofu=htmlcomplete#CompleteTags
+au BufNewFile,BufRead *.html setl filetype=xhtml
+au FileType html,xhtml setl noai ts=2 sw=2 sts=2 ofu=htmlcomplete#CompleteTags
 au FileType css setl omnifunc=csscomplete#CompleteCSS
 
 " javascript
