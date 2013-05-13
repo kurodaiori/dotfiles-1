@@ -90,7 +90,7 @@ au FileType javascript setl ofu=javascriptcomplete#CompleteJS
 let python_highlight_all = 1
 au FileType python setl ofu=pythoncomplete#Complete
             \| setl makeprg=pep8\ %
-            \| setl errorformat=%m\ in\ %f\ on\ line\ %l
+            \| setl errorformat=%f:%l:%c:\ %m
 
 " sh
 au FileType sh setl ts=4 sw=4 sts=4 noet
