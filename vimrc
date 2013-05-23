@@ -59,7 +59,6 @@ set history=10000
 " omni-completion
 set cpt=t,i
 set cot=longest,menuone
-hi Pmenu ctermbg=6
 
 " ruby
 au FileType ruby,eruby setl omnifunc=rubycomplete#Complete
