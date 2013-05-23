@@ -2,6 +2,9 @@
 --totals
 --extra=+f
 
+--exclude=.git
+--exclude=.svn
+
 --langmap=Perl:+.t
 --exclude=blib
 
