@@ -28,7 +28,6 @@ cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 nnoremap <C-p> "*p
 nnoremap <C-l> <C-l>:syntax sync fromstart<CR>
-ia --- #--------------------------------------------------------------------#
 
 " search
 set wrapscan
