@@ -62,6 +62,8 @@ shopt -s histappend
 #export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export PROMPT_COMMAND="history -a; history -c; history -r;"
 
+export IGNOREEOF=3
+
 # show current branch.
 PS1='\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ ';
 
