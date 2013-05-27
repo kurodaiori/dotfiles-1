@@ -104,7 +104,9 @@ au FileType aspvbs setl ts=4 sw=4 sts=4 noet
 
 " go
 set rtp+=$GOROOT/misc/vim
-au BufNewFile,BufRead *.go setl filetype=go
+au BufNewFile,BufRead *.go setl filetype=go ts=4 sw=4 sts=4 noet 
+            \| setl makeprg=go\ build\ %
+            \| setl errorformat=%f:%l:\ %m,%-G,%-G\#%s
 
 " quickfix
 au BufRead quickfix setl modifiable
