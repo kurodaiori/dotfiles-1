@@ -110,7 +110,7 @@ au BufNewFile,BufRead *.go setl filetype=go ts=4 sw=4 sts=4 noet
 
 " quickfix
 au BufRead quickfix setl modifiable
-            \| silent exe "%!perl -ple '$_ = sprintf q{\\%s|\\%3s \\%s \\%2s|\\%s}, split qr{[| ]}, $_, 5'"
+            \| silent exe "%!perl -ple '@l = split qr{[|]}, $_, 3; $_ = $l[1] =~ qr{col} ? sprintf q{\\%s|\\%3s \\%s \\%2s|\\%s}, $l[0], split(qr{[ ]}, $l[1]), $l[2] : sprintf q{\\%s|\\%3s|\\%s}, @l'"
             \| setl nomodifiable
 
 " markdown
