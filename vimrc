@@ -28,8 +28,8 @@ cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 nnoremap <C-p> "*p
 nnoremap <C-l> <C-l>:syntax sync fromstart<CR>
-vnoremap <C-w><C-]> "vy:stj v<CR>
-vnoremap <C-w>} "vy:ptag v<CR>
+vnoremap <C-w><C-]> "vy:stj <C-r>v<CR>
+vnoremap <C-w>} "vy:ptag <C-r>v<CR>
 
 " search
 set wrapscan
