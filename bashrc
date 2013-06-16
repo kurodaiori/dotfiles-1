@@ -16,11 +16,11 @@ case "$(uname)" in
         fi
 
         #git completion
-        if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
-            . `brew --prefix`/etc/bash_completion.d/git-completion.bash
+        if [ -f `brew --prefix git`/etc/bash_completion.d/git-completion.bash ]; then
+            . `brew --prefix git`/etc/bash_completion.d/git-completion.bash
         fi
-        if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
-            . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
+        if [ -f `brew --prefix git`/etc/bash_completion.d/git-prompt.sh ]; then
+            . `brew --prefix git`/etc/bash_completion.d/git-prompt.sh
         fi
 
         # Mac2Mac ssh 
