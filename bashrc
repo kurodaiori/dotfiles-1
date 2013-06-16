@@ -8,6 +8,7 @@ case "$(uname)" in
         alias sqlplus="rlwrap sqlplus"
         alias smbclient="rlwrap smbclient"
         alias telnet="rlwrap telnet"
+        alias screen="rlwrap screen"
 
         #completion
         if [ -f `brew --prefix`/etc/bash_completion ]; then
