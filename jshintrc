@@ -111,7 +111,8 @@
 
     "maxerr"        : 100,      // Maximum errors before stopping.
     "predef"        : [         // Extra globals.
-        "Backbone"
+        "Backbone",
+        "_"
         //"exampleVar",
         //"anotherCoolGlobal",
         //"iLoveDouglas"
