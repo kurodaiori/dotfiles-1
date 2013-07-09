@@ -1,4 +1,5 @@
 filetype plugin indent on
+set t_Co=256
 
 " appearance
 syntax on
@@ -15,6 +16,9 @@ set fdm=marker
 set tags+=tags;
 set cscopetag
 set fo=1cqmnBj
+
+colorscheme lucius
+LuciusLightHighContrast
 
 " key behaviour
 source $VIMRUNTIME/macros/matchit.vim

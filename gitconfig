@@ -4,14 +4,14 @@
 [color]
         ui = true
 [merge]
-	tool = vimdiff
+	tool = /usr/local/bin/vimdiff
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = /usr/local/bin/vim
 [mergetool]
 	keepBackup = false
 [diff]
-	tool = vimdiff
+	tool = /usr/local/bin/vimdiff
 [difftool]
 	prompt = false
 [push]
