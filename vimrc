@@ -11,7 +11,6 @@ set expandtab
 set scrolloff=3
 set wildmode=list,full
 set title
-set ambiwidth=double
 set fdm=marker
 set tags+=tags;
 set cscopetag
