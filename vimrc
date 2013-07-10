@@ -15,7 +15,11 @@ set title
 set fdm=marker
 set tags+=tags;
 set cscopetag
-set fo=1cqmnBj
+
+set fo=1cqmnB
+if has("patch550")
+    set fo+=j
+endif
 
 colorscheme lucius
 LuciusLightHighContrast
