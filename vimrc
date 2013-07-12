@@ -21,8 +21,11 @@ if has("patch550")
     set fo+=j
 endif
 
-colorscheme lucius
-LuciusLightHighContrast
+let v:errmsg = ""
+silent! colorscheme lucius
+if v:errmsg == ""
+    LuciusBlackHighContrast
+endif
 
 " key behaviour
 source $VIMRUNTIME/macros/matchit.vim
