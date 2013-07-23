@@ -67,7 +67,8 @@ export IGNOREEOF=3
 # show current branch.
 PS1='\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ ';
 
-[[ $TERM = screen* ]] && PS1="`printf '\[\033k\033\134\134\]'`$PS1"
+# insert escape char on gnu screen sessions.
+[[ $TERM = screen* ]] && [ -z "$TMUX" ] && PS1="`printf '\[\033k\033\134\134\]'`$PS1"
 
 #cpanm
 if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
