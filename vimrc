@@ -24,7 +24,8 @@ endif
 let v:errmsg = ""
 silent! colorscheme lucius
 if v:errmsg == ""
-    LuciusBlackHighContrast
+    LuciusLightHighContrast
+    "LuciusDarkHighContrast
 endif
 
 " key behaviour
@@ -107,8 +108,8 @@ au FileType sh setl ts=4 sw=4 sts=4 noet
 
 " php
 au FileType php setl ofu=phpcomplete#CompletePHP
-            \| setl makeprg=php\ -l\ %
-            \| setl errorformat=%m\ in\ %f\ on\ line\ %l
+            \| setl makeprg=phpcs\ --report=csv\ --standard=Zend\ %\ \\\\|tail\ -n\ +2
+            \| setl efm=\"%f\"\\,%l\\,%c\\,%t%*[a-zA-Z]\\,\"%m\"\\,%*[a-zA-Z0-9_.-]\\,%*[0-9]
 
 " asp
 let g:filetype_asp = "aspvbs"
@@ -122,7 +123,7 @@ au BufNewFile,BufRead *.go setl filetype=go ts=4 sw=4 sts=4 noet
 
 " quickfix
 au BufRead quickfix setl modifiable
-            \| silent exe "%!perl -ple '@l = split qr{[|]}, $_, 3; $_ = $l[1] =~ qr{col} ? sprintf q{\\%s|\\%3s \\%s \\%2s|\\%s}, $l[0], split(qr{[ ]}, $l[1]), $l[2] : sprintf q{\\%s|\\%3s|\\%s}, @l'"
+            \| silent exe "%!perl -ple '@l = split qr{[|]}, $_, 3; $_ = $l[1] =~ qr{col} ? join q{|}, $l[0], sprintf(q{\\%3s \\%s \\%2s \\%s}, split(qr{[ ]}, $l[1])), $l[2] : sprintf q{\\%s|\\%3s|\\%s}, @l'"
             \| setl nomodifiable
 
 " markdown
