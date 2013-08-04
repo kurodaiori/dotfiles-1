@@ -85,5 +85,11 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+#php
+if [ -f $HOME/.phpenv/bin/phpenv ]; then
+	export PATH=$PATH:$HOME/.phpenv/bin
+	eval "$(phpenv init -)"
+fi
+
 # trash command
 [ -f "$(type -P trash)" ] && alias rm="trash"
