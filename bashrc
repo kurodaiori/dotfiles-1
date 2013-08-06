@@ -1,3 +1,5 @@
+[ -f /etc/profile ] && PATH="" && source /etc/profile
+
 case "$(uname)" in
     Darwin )
         #terminal
