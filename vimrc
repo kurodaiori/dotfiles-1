@@ -108,7 +108,7 @@ au FileType sh setl ts=4 sw=4 sts=4 noet
 
 " php
 au FileType php setl ofu=phpcomplete#CompletePHP
-            \| setl makeprg=phpcs\ --report=csv\ --standard=PEAR\ %\ \\\\|tail\ -n\ +2
+            \| setl makeprg=phpcs\ --report=csv\ --standard=PSR2\ %\ \\\\|tail\ -n\ +2
             \| setl efm=\"%f\"\\,%l\\,%c\\,%t%*[a-zA-Z]\\,\"%m\"\\,%*[a-zA-Z0-9_.-]\\,%*[0-9]
 
 " asp
