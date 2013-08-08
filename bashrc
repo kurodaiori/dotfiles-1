@@ -67,7 +67,7 @@ export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_C
 export IGNOREEOF=3
 
 # show current branch.
-PS1='\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ ';
+PS1='\[\e[0m\]\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ ';
 
 # insert escape char on gnu screen sessions.
 [[ $TERM = screen* ]] && [ -z "$TMUX" ] && PS1="`printf '\[\033k\033\134\134\]'`$PS1"
