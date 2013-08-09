@@ -19,6 +19,7 @@
 [alias]
 	serve = daemon --reuseaddr --base-path=. --export-all --verbose
 	stat = status --short
+	exec = "!exec "
 [sendemail]
 	smtpserver = smtp.gmail.com
 	smtpuser = shin@kojima.org
