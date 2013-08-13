@@ -17,7 +17,7 @@ set tags+=tags;
 set cscopetag
 
 set fo=1cqmnB
-if has("patch550")
+if v:version >= 704 || has("patch550")
     set fo+=j
 endif
 
