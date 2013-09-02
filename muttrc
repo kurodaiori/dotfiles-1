@@ -1,0 +1,63 @@
+set editor = 'vim "+set fdm=syntax"'
+
+# gmail(imap)
+set imap_user = "shin@kojima.org"
+set imap_pass = `security find-internet-password -g -a shin@kojima.org -s imap.gmail.com 2>&1 | sed -n -E 's/^password: "([^"]*)"/\1/p'`
+set smtp_url = "smtp://shin@kojima.org@smtp.gmail.com:587/"
+set smtp_pass = `security find-internet-password -g -a shin@kojima.org -s smtp.gmail.com 2>&1 | sed -n -E 's/^password: "([^"]*)"/\1/p'`
+set from = "shin@kojima.org"
+set realname = "Kojima Shin"
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/cache/certificates
+
+set move = no
+
+set sort = threads
+set sort_aux = 'reverse-last-date-received'
+
+set timeout = 3
+set mail_check = 900
+
+set imap_keepalive = 300
+set imap_idle
+set imap_check_subscribed
+unset imap_passive
+unset imap_peek
+
+set reverse_name
+set metoo = yes
+
+set edit_headers = yes
+set signature = "echo $'\
+Kojima Shin\\n\
++818041717536'|"
+
+ignore *
+unignore from to cc date subject
+unhdr_order *
+hdr_order from to cc date subject
+
+color hdrdefault brightblack white
+color header black white ^(From|Subject):
+color search black yellow
+color normal white black
+color message white black
+color body cyan black '[a-zA-Z0-9._%+-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z]{2,4}'
+color body cyan black '(https?|ftp)://([a-zA-Z0-9.-]+\.)+[a-zA-Z]{2,4}[a-zA-Z0-9./~%&?=+_-]*'
+color quoted brightblack black
+color signature brightblack black
+color attachment black green
+color tree red black
+color indicator black cyan
+color status blue white
+color tilde blue black
+
+set pager_index_lines = 6
+
+bind index G imap-fetch-mail
