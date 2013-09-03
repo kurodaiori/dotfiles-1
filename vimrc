@@ -56,7 +56,7 @@ set laststatus=2
 
 " character encoding and file format
 set encoding=utf-8
-set fencs=iso-2022-jp,utf-8,cp932,euc-jp,gb2312,latin1
+set fencs=ucs-bom,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,gb2312,cp932,big5,gb18030
 set noimdisable
 set iminsert=0
 set imsearch=0
