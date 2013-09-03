@@ -70,3 +70,5 @@ color index brightblack black "~D"
 set pager_index_lines = 6
 
 bind index G imap-fetch-mail
+
+auto_view text/html
