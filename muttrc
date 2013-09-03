@@ -69,13 +69,13 @@ color quoted6 blue default
 color quoted7 brightblue default
 
 # new msg
-color index brightwhite black "~N !~T !~F"
-# tagged msg
-color index white blue "~T !~F"
+color index brightwhite black "~N !~F !~T"
 # flagged msg
-color index white magenta "~F"
+color index white magenta "~F !~T"
+# tagged msg
+color index white blue "~T"
 # deleted msg
-color index brightblack black "~D"
+color index red default "~D"
 
 set pager_index_lines = 6
 
