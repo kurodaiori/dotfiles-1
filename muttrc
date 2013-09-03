@@ -63,7 +63,7 @@ color index brightwhite black "~N !~T !~F"
 # tagged msg
 color index white blue "~T !~F"
 # flagged msg
-color index white blue "~F"
+color index white magenta "~F"
 # deleted msg
 color index brightblack black "~D"
 
