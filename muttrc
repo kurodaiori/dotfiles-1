@@ -39,9 +39,9 @@ Kojima Shin\\n\
 +818041717536'|"
 
 ignore *
-unignore from to cc date subject
+unignore subject from to cc date
 unhdr_order *
-hdr_order from to cc date subject
+hdr_order subject from to cc date
 
 color hdrdefault brightblack white
 color header black white ^(From|Subject):
@@ -51,12 +51,22 @@ color message white black
 color body cyan black '[a-zA-Z0-9._%+-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z]{2,4}'
 color body cyan black '(https?|ftp)://([a-zA-Z0-9.-]+\.)+[a-zA-Z]{2,4}[a-zA-Z0-9./~%&?=+_-]*'
 color quoted brightblack black
-color signature brightblack black
-color attachment black green
-color tree red black
-color indicator black cyan
+color signature brightgreen black
+color attachment black brightgreen
+color tree brightred default
+color indicator black brightcyan
 color status blue white
 color tilde blue black
+color error white brightred
+
+color quoted blue default
+color quoted1 brightblue default
+color quoted2 blue default
+color quoted3 brightblue default
+color quoted4 blue default
+color quoted5 brightblue default
+color quoted6 blue default
+color quoted7 brightblue default
 
 # new msg
 color index brightwhite black "~N !~T !~F"
