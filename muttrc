@@ -68,8 +68,8 @@ color quoted5 brightblue default
 color quoted6 blue default
 color quoted7 brightblue default
 
-# new msg
-color index brightwhite black "~N !~F !~T"
+# unread msg
+color index brightwhite black "(~N|~O) !~F !~T"
 # flagged msg
 color index white magenta "~F !~T"
 # tagged msg
