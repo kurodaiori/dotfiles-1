@@ -58,6 +58,15 @@ color indicator black cyan
 color status blue white
 color tilde blue black
 
+# new msg
+color index brightwhite black "~N !~T !~F"
+# tagged msg
+color index white blue "~T !~F"
+# flagged msg
+color index white blue "~F"
+# deleted msg
+color index brightblack black "~D"
+
 set pager_index_lines = 6
 
 bind index G imap-fetch-mail
