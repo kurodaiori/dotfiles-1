@@ -41,6 +41,8 @@ unset imap_peek
 
 set reverse_name
 
+set fcc_attach
+set include
 set edit_headers = yes
 set signature = "echo $'\
 Kojima Shin\\n\
