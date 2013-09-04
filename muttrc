@@ -95,6 +95,7 @@ set pager_index_lines = 6
 
 bind index G imap-fetch-mail
 
+alternative_order text/plain text/html
 auto_view text/html
 
 set query_command = "contacts -Sf '%e'$'\t''%n' '%s'"
