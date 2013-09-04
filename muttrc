@@ -7,7 +7,8 @@ bind index \CF next-page
 bind index \CB previous-page
 bind index \CL sync-mailbox
 bind index ? search-opposite
-bind index \e? help
+bind index h help
+macro index <esc> "<limit>all\n"
 
 # gmail(imap)
 set imap_user = "shin@kojima.org"
