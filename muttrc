@@ -9,6 +9,7 @@ bind index \CL sync-mailbox
 bind index ? search-opposite
 bind index h help
 macro index <esc> "<limit>all\n"
+set quit = no
 
 # gmail(imap)
 set imap_user = "shin@kojima.org"
