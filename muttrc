@@ -16,6 +16,7 @@ set smtp_url = "smtp://shin@kojima.org@smtp.gmail.com:587/"
 set smtp_pass = `security find-internet-password -g -a shin@kojima.org -s smtp.gmail.com 2>&1 | sed -n -E 's/^password: "([^"]*)"/\1/p'`
 set from = "shin@kojima.org"
 set realname = "Kojima Shin"
+set use_from
 
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
