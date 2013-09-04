@@ -40,7 +40,6 @@ unset imap_passive
 unset imap_peek
 
 set reverse_name
-set metoo = yes
 
 set edit_headers = yes
 set signature = "echo $'\
