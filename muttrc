@@ -62,21 +62,21 @@ color body cyan black '[a-zA-Z0-9._%+-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z]{2,4}'
 color body cyan black '(https?|ftp)://([a-zA-Z0-9.-]+\.)+[a-zA-Z]{2,4}[a-zA-Z0-9./~%&?=+_-]*'
 color quoted brightblack black
 color signature brightgreen black
-color attachment black brightgreen
-color tree brightred default
-color indicator black brightcyan
+color attachment black green
+color tree brightred black
+color indicator black cyan
 color status blue white
 color tilde blue black
-color error white brightred
+color error white red
 
-color quoted blue default
-color quoted1 brightblue default
-color quoted2 blue default
-color quoted3 brightblue default
-color quoted4 blue default
-color quoted5 brightblue default
-color quoted6 blue default
-color quoted7 brightblue default
+color quoted blue black
+color quoted1 brightblue black
+color quoted2 blue black
+color quoted3 brightblue black
+color quoted4 blue black
+color quoted5 brightblue black
+color quoted6 blue black
+color quoted7 brightblue black
 
 # unread msg
 color index brightwhite black "(~N|~O) !~F !~T"
@@ -85,7 +85,7 @@ color index white magenta "~F !~T"
 # tagged msg
 color index white blue "~T"
 # deleted msg
-color index red default "~D"
+color index red black "~D"
 
 set pager_index_lines = 6
 
