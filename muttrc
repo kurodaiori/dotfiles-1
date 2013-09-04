@@ -41,6 +41,7 @@ unset imap_peek
 
 set reverse_name
 
+set forward_format="Fwd: %s"
 set fcc_attach
 set include
 set edit_headers = yes
