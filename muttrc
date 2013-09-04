@@ -1,5 +1,14 @@
 set editor = 'vim "+set fdm=syntax"'
 
+# vi mapping
+bind index gg first-entry
+bind index G last-entry
+bind index \CF next-page
+bind index \CB previous-page
+bind index \CL sync-mailbox
+bind index ? search-opposite
+bind index \e? help
+
 # gmail(imap)
 set imap_user = "shin@kojima.org"
 set imap_pass = `security find-internet-password -g -a shin@kojima.org -s imap.gmail.com 2>&1 | sed -n -E 's/^password: "([^"]*)"/\1/p'`
