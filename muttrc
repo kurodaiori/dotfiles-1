@@ -92,3 +92,10 @@ set pager_index_lines = 6
 bind index G imap-fetch-mail
 
 auto_view text/html
+
+set query_command = "contacts -Sf '%e'$'\t''%n' '%s'"
+bind editor <Tab> complete-query
+
+set pager_stop
+
+macro pager \Cu "|urlview<enter>"
