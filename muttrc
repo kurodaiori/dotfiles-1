@@ -104,3 +104,5 @@ bind editor <Tab> complete-query
 set pager_stop
 
 macro pager \Cu "|urlview<enter>"
+
+charset-hook GB2312 GB18030
