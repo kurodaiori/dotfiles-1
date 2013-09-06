@@ -1,14 +1,16 @@
 set editor = 'MAIL_EDIT=1 vim -c "set fdm=syntax"'
 
 # vi mapping
-bind index gg first-entry
-bind index G last-entry
+bind index 0 first-entry
+bind index $ last-entry
 bind index \CF next-page
 bind index \CB previous-page
-bind index \CL sync-mailbox
+macro index \CL "<sync-mailbox><imap-fetch-mail>"
 bind index ? search-opposite
 bind index h help
-macro index <esc> "<limit>all\n"
+bind index za collapse-thread
+bind index zm collapse-all
+macro index <esc><esc> "<limit>all\n"
 set quit = no
 
 # gmail(imap)
@@ -92,8 +94,6 @@ color index white blue "~T"
 color index red black "~D"
 
 set pager_index_lines = 6
-
-bind index G imap-fetch-mail
 
 alternative_order text/plain text/html
 auto_view text/html
