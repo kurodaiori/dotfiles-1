@@ -1,5 +1,5 @@
 text/html; w3m -I GB18030 %s; nametemplate=%s.html; copiousoutput; test=cs=%{charset} && [ "$cs" = "GB2312" ]
-text/html; w3m -I %{charset} -dump %s; nametemplate=%s.html; copiousoutput
+text/html; w3m -I %{charset} %s; nametemplate=%s.html; copiousoutput
 
 image/*; cat %s | open -f -a preview
 
