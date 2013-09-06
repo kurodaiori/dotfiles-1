@@ -56,7 +56,10 @@ set laststatus=2
 
 " character encoding and file format
 set encoding=utf-8
-set fencs=ucs-bom,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,gb2312,cp932,big5,gb18030
+set fencs=ucs-bom,utf-8,euc-jp,cp932,gb18030
+if !empty($MAIL_EDIT)
+    set fencs^=iso-2022-jp
+endif
 set noimdisable
 set iminsert=0
 set imsearch=0

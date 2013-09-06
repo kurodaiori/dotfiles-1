@@ -1,4 +1,4 @@
-set editor = 'vim "+set fdm=syntax"'
+set editor = 'MAIL_EDIT=1 vim -c "set fdm=syntax"'
 
 # vi mapping
 bind index gg first-entry
