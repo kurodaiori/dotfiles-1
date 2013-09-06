@@ -14,7 +14,6 @@ case "$(uname)" in
 
         # mutt
         alias mutt="LC_ALL= LC_MESSAGES=C mutt"
-        alias lbdbq="LC_ALL=C lbdbq"
 
         #completion
         if [ -f `brew --prefix`/etc/bash_completion ]; then
