@@ -1,16 +1,30 @@
 set editor = 'MAIL_EDIT=1 vim -c "set fdm=syntax"'
 
 # vi mapping
-bind index 0 first-entry
-bind index $ last-entry
+bind generic 0 first-entry
+bind generic gg first-entry
+bind index gr group-reply
+bind pager gg top
+bind generic $ last-entry
+bind generic G last-entry
+bind pager G bottom
+bind index j next-entry
+bind pager j next-line
+bind index k previous-entry
+bind pager k previous-line
 bind index \CF next-page
+bind pager \CF next-page
 bind index \CB previous-page
-macro index \CL "<sync-mailbox><imap-fetch-mail>"
-bind index ? search-opposite
+bind pager \CB previous-page
+macro index \CL "<sync-mailbox><imap-fetch-mail><fetch-mail><refresh>"
+bind generic ? search-opposite
+bind generic N search-reverse
 bind index h help
 bind index za collapse-thread
 bind index zm collapse-all
-macro index <esc><esc> "<limit>all\n"
+macro index <esc><esc> "<limit>all\n<untag-pattern>~T\n"
+bind index t tag-thread
+bind index T tag-entry
 set quit = no
 
 # gmail(imap)
@@ -18,91 +32,98 @@ set imap_user = "shin@kojima.org"
 set imap_pass = `security find-internet-password -g -a shin@kojima.org -s imap.gmail.com 2>&1 | sed -n -E 's/^password: "([^"]*)"/\1/p'`
 set smtp_url = "smtp://shin@kojima.org@smtp.gmail.com:587/"
 set smtp_pass = `security find-internet-password -g -a shin@kojima.org -s smtp.gmail.com 2>&1 | sed -n -E 's/^password: "([^"]*)"/\1/p'`
+set read_inc = 100
 set from = "shin@kojima.org"
 set realname = "Kojima Shin"
 set use_from
-
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
-
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
 set certificate_file=~/.mutt/cache/certificates
-
 set move = no
 
+# index sort order
 set sort = threads
 set sort_aux = 'reverse-last-date-received'
 
+# keep alive
 set timeout = 3
 set mail_check = 900
-
 set imap_keepalive = 300
 set imap_idle
 set imap_check_subscribed
 unset imap_passive
 unset imap_peek
 
+# compose
+set metoo = yes
+set fast_reply
 set reverse_name
-
 set forward_format="Fwd: %s"
 set fcc_attach
 set include
 set edit_headers = yes
+set send_charset = "us-ascii:iso-8859-1:iso-2022-jp:utf-8"
 set signature = "echo $'\
 Kojima Shin\\n\
 +818041717536'|"
 
+# show headers
 ignore *
 unignore subject from to cc date
 unhdr_order *
 hdr_order subject from to cc date
 
+# show index
+set pager_index_lines = 6
+set index_format = "%4C %Z %{%m/%d} %-15.15L (%?X?〇%2X&%4c?) %?M?+-- %2M msgs:&?%s%?M? %|-&?"
+
+# show mail
+alternative_order text/plain text/html
+auto_view text/html
+set pager_stop
+
+# color
 color hdrdefault brightblack white
 color header black white ^(From|Subject):
 color search black yellow
 color normal white black
 color message white black
 color body cyan black '[a-zA-Z0-9._%+-]+@([a-zA-Z0-9.-]+\.)+[a-zA-Z]{2,4}'
-color body cyan black '(https?|ftp)://([a-zA-Z0-9.-]+\.)+[a-zA-Z]{2,4}[a-zA-Z0-9./~%&?=+_-]*'
-color quoted brightblack black
-color signature brightgreen black
+color body cyan black '(https?|ftp)://([a-zA-Z0-9.-]+\.)+[a-zA-Z]{2,4}[a-zA-Z0-9./~%&?=+_#-]*'
+color signature brightblack black
 color attachment black green
-color tree brightred black
+color tree red black
 color indicator black cyan
 color status blue white
 color tilde blue black
 color error white red
+color quoted brightblack black
+color index brightwhite black "(~N|~O) !~F !~T" # unread msg
+color index white magenta "~F !~T" # flagged msg
+color index white blue "~T" # tagged msg
+color index red black "~D" # deleted msg
+color index brightblack black "~v" # fold thread
 
-color quoted blue black
-color quoted1 brightblue black
-color quoted2 blue black
-color quoted3 brightblue black
-color quoted4 blue black
-color quoted5 brightblue black
-color quoted6 blue black
-color quoted7 brightblue black
-
-# unread msg
-color index brightwhite black "(~N|~O) !~F !~T"
-# flagged msg
-color index white magenta "~F !~T"
-# tagged msg
-color index white blue "~T"
-# deleted msg
-color index red black "~D"
-
-set pager_index_lines = 6
-
-alternative_order text/plain text/html
-auto_view text/html
-
-set query_command = "contacts -Sf '%e'$'\t''%n' '%s'"
+# contacts
+set query_command = "contacts -Sf '%e'$'\t''%n' '%s' | sed 's/,//'"
 bind editor <Tab> complete-query
 
-set pager_stop
-
+# url
 macro pager \Cu "|urlview<enter>"
 
+# tag
+set auto_tag = yes
+
+# charset fix
+set charset = "utf-8"
 charset-hook GB2312 GB18030
+
+# beep
+set beep = no
+
+# init
+set collapse_unread
+folder-hook .  'push <collapse-all>; unset collapse_unread'
