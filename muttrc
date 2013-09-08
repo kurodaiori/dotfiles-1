@@ -5,6 +5,7 @@ bind generic 0 first-entry
 bind generic gg first-entry
 bind index gr group-reply
 bind pager gg top
+bind pager gr group-reply
 bind generic $ last-entry
 bind generic G last-entry
 bind pager G bottom
