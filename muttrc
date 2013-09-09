@@ -1,4 +1,4 @@
-set editor = 'MAIL_EDIT=1 vim -c "set fdm=syntax"'
+set editor = 'MUTT_EDIT=1 vim +/^$ +noh'
 
 # vi mapping
 bind index 0 first-entry
