@@ -38,6 +38,7 @@ set realname = "Kojima Shin"
 set use_from
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
+set record = "+[Gmail]/Sent Mail"
 set postponed = "+[Gmail]/Drafts"
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
