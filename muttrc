@@ -121,6 +121,9 @@ set auto_tag = yes
 
 # charset fix
 set charset = "utf-8"
+set assumed_charset = "iso-2022-jp:utf-8"
+set thorough_search = yes
+set rfc2047_parameters = yes
 charset-hook GB2312 GB18030
 
 # beep
