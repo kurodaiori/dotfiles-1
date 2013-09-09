@@ -17,8 +17,12 @@ bind pager \CF next-page
 bind index \CB previous-page
 bind pager \CB previous-page
 macro index \CL "<sync-mailbox><imap-fetch-mail><fetch-mail><refresh>"
-bind generic ? search-opposite
-bind generic N search-reverse
+bind index N search-opposite
+bind pager N search-opposite
+bind index <esc>n toggle-new
+bind pager <esc>n mark-as-new
+bind index ? search-reverse
+bind pager ? search-reverse
 bind index h help
 bind index za collapse-thread
 bind index zm collapse-all
