@@ -1,7 +1,9 @@
-[ -f /etc/profile ] && PATH="" && source /etc/profile
 
 case "$(uname)" in
     Darwin )
+        # reflesh $PATH on tmux
+        [ -f /etc/profile ] && PATH="" && source /etc/profile
+
         #terminal
         export CLICOLOR=1
         export LSCOLORS=ExFxCxDxBxegedabagacad

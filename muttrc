@@ -1,13 +1,13 @@
-set editor = 'MAIL_EDIT=1 vim -c "set fdm=syntax"'
+set editor = 'MUTT_EDIT=1 vim +/^$ +noh'
 
 # vi mapping
-bind generic 0 first-entry
-bind generic gg first-entry
+bind index 0 first-entry
+bind index gg first-entry
 bind index gr group-reply
 bind pager gg top
 bind pager gr group-reply
-bind generic $ last-entry
-bind generic G last-entry
+bind index $ last-entry
+bind index G last-entry
 bind pager G bottom
 bind index j next-entry
 bind pager j next-line
@@ -18,8 +18,12 @@ bind pager \CF next-page
 bind index \CB previous-page
 bind pager \CB previous-page
 macro index \CL "<sync-mailbox><imap-fetch-mail><fetch-mail><refresh>"
-bind generic ? search-opposite
-bind generic N search-reverse
+bind index N search-opposite
+bind pager N search-opposite
+bind index <esc>n toggle-new
+bind pager <esc>n mark-as-new
+bind index ? search-reverse
+bind pager ? search-reverse
 bind index h help
 bind index za collapse-thread
 bind index zm collapse-all
@@ -39,6 +43,7 @@ set realname = "Kojima Shin"
 set use_from
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
+set record = "+[Gmail]/Sent Mail"
 set postponed = "+[Gmail]/Drafts"
 set header_cache=~/.mutt/cache/headers
 set message_cachedir=~/.mutt/cache/bodies
@@ -109,6 +114,7 @@ color index red black "~D" # deleted msg
 color index brightblack black "~v" # fold thread
 
 # contacts
+set reverse_alias
 set query_command = "contacts -Sf '%e'$'\t''%n' '%s' | sed 's/,//'"
 bind editor <Tab> complete-query
 
@@ -120,11 +126,14 @@ set auto_tag = yes
 
 # charset fix
 set charset = "utf-8"
+set assumed_charset = "iso-2022-jp:utf-8"
+set thorough_search = yes
+set rfc2047_parameters = yes
 charset-hook GB2312 GB18030
 
 # beep
 set beep = no
 
 # init
-set collapse_unread
-folder-hook .  'push <collapse-all>; unset collapse_unread'
+unset collapse_unread
+folder-hook .  'push <collapse-all>'
