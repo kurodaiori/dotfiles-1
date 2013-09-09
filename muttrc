@@ -109,6 +109,7 @@ color index red black "~D" # deleted msg
 color index brightblack black "~v" # fold thread
 
 # contacts
+set reverse_alias
 set query_command = "contacts -Sf '%e'$'\t''%n' '%s' | sed 's/,//'"
 bind editor <Tab> complete-query
 
