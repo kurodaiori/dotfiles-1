@@ -130,5 +130,5 @@ charset-hook GB2312 GB18030
 set beep = no
 
 # init
-set collapse_unread
-folder-hook .  'push <collapse-all>; unset collapse_unread'
+unset collapse_unread
+folder-hook .  'push <collapse-all>'
