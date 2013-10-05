@@ -95,3 +95,6 @@ fi
 
 #perl
 type -P plenv >/dev/null && eval "$(plenv init -)"
+
+#go
+[ -f $HOME/.gvm/scripts/gvm ] && . $HOME/.gvm/scripts/gvm
