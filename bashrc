@@ -77,11 +77,6 @@ PS1='\[\e[0m\]\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ ';
 # insert escape char on gnu screen sessions.
 [[ $TERM = screen* ]] && [ -z "$TMUX" ] && PS1="`printf '\[\033k\033\134\134\]'`$PS1"
 
-#cpanm
-if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
-    source ~/perl5/perlbrew/etc/bashrc
-fi
-
 #python
 export WORKON_HOME=$HOME/.virtualenvs
 if [ -f "`type -P virtualenvwrapper.sh`" ]; then
@@ -97,3 +92,6 @@ if [ -f $HOME/.phpenv/bin/phpenv ]; then
 	export PATH=$PATH:$HOME/.phpenv/bin
 	eval "$(phpenv init -)"
 fi
+
+#perl
+type -P plenv >/dev/null && eval "$(plenv init -)"
