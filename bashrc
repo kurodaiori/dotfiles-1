@@ -78,10 +78,7 @@ PS1='\[\e[0m\]\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ ';
 [[ $TERM = screen* ]] && [ -z "$TMUX" ] && PS1="`printf '\[\033k\033\134\134\]'`$PS1"
 
 #python
-export WORKON_HOME=$HOME/.virtualenvs
-if [ -f "`type -P virtualenvwrapper.sh`" ]; then
-    source `type -P virtualenvwrapper.sh`
-fi
+type -P pyenv >/dev/null && eval "$(pyenv init -)"
 
 #ruby
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
