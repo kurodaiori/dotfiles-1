@@ -1,4 +1,7 @@
 #!/bin/sh
+
+[ "$(uname)" = "Darwin" ] && ln="/bin/ln -fhs" || ln="/bin/ln -fns"
+
 for f in ~/dotfiles/*
 do
     bn="$(basename "$f")"
@@ -6,5 +9,5 @@ do
         INSTALL ) bn="";; # This installer.
         bashrc ) [ "$(uname)" = "Linux" ] && bn="bash_aliases";;
     esac
-    [ "$bn" != "" ] && ln -fhs "$f" "$HOME/.$bn"
+    [ "$bn" != "" ] && $ln "$f" "$HOME/.$bn"
 done
