@@ -64,7 +64,7 @@ export VTE_CJK_WIDTH=1 #ambiwidth
 
 # bash history settings
 export HISTCONTROL=ignoreboth:erasedups
-export HISTIGNORE="ls:cd*:history*"
+export HISTIGNORE="&:ls*:pwd*:cd*:history*:exit"
 export HISTSIZE=10000
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
