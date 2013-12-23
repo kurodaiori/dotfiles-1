@@ -127,7 +127,19 @@ au BufNewFile,BufRead *.go setl filetype=go ts=4 sw=4 sts=4 noet
 
 " quickfix
 au BufRead quickfix setl modifiable
-            \| silent exe "%!perl -ple '@l = split qr{[|]}, $_, 3; $_ = $l[1] =~ qr{col} ? join q{|}, $l[0], sprintf(q{\\%3s \\%s \\%2s \\%s}, split(qr{[ ]}, $l[1])), $l[2] : sprintf q{\\%s|\\%3s|\\%s}, @l'"
+            \| silent exe "%!perl -ple '
+                \my ($file, $pos, $msg) = split qr{[|]}, $_, 3;
+                \my $aligned_pos = sub {
+                \  my @p = split qr{[ ]}, shift;
+                \  return                                        if @p == 0;
+                \  return sprintf q{\\%3s}, @p                   if @p == 1;
+                \  return sprintf q{\\%3s \\%s}, @p              if @p == 2;
+                \  return sprintf q{\\%3s \\%s \\%2s}, @p        if @p == 3;
+                \  return sprintf q{\\%3s \\%s \\%2s \\%-8s}, @p if @p == 4;
+                \  return join q{ }, @p;
+                \}->($pos);
+                \$_ = join q{|}, $file, $aligned_pos, $msg;
+            \'"
             \| setl nomodifiable
 
 " markdown
