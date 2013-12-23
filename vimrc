@@ -108,6 +108,7 @@ au FileType python setl ofu=pythoncomplete#Complete
             \| setl errorformat=%f:%l:%c:\ %m
 
 " sh
+let g:is_bash = 1
 au FileType sh setl ts=4 sw=4 sts=4 noet
 
 " php
