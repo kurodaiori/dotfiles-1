@@ -33,7 +33,7 @@ source $VIMRUNTIME/macros/matchit.vim
 set backspace=2
 set virtualedit=all
 nnoremap <Leader>w :set invwrap<CR>:set wrap?<CR>
-nnoremap gm :make<CR>:botright copen
+nnoremap gm :silent make\|redraw!\|:if len(getqflist())\|:botright copen 3\|else\|ccl\|endif\|cc<CR>
 cnoremap w!! w !sudo tee > /dev/null %
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
