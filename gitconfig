@@ -12,6 +12,7 @@
 	keepBackup = false
 [diff]
 	tool = vimdiff
+	algorithm = patience
 [difftool]
 	prompt = false
 [push]
