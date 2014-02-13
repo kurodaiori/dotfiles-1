@@ -19,7 +19,7 @@
 	default = simple
 [alias]
 	serve = daemon --reuseaddr --base-path=. --export-all --verbose
-	stat = status --short
+	stat = status --short --branch
 	exec = "!exec "
 [sendemail]
 	smtpserver = smtp.gmail.com
