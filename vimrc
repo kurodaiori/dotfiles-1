@@ -50,7 +50,7 @@ set smartcase
 set hlsearch
 set incsearch
 set diffopt+=iwhite
-set grepprg=git\ exec\ git\ grep\ -n
+set grepprg=git\ grep\ -n\ $*\ --\ $(git\ rev-parse\ --show-cdup)
 
 " command
 set showcmd
