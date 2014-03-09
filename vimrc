@@ -33,7 +33,8 @@ source $VIMRUNTIME/macros/matchit.vim
 set backspace=2
 set virtualedit=all
 nnoremap <Leader>w :set invwrap<CR>:set wrap?<CR>
-nnoremap gm :silent make\|redraw!\|:if len(getqflist())\|:botright copen 3\|else\|ccl\|endif\|cc<CR>
+nnoremap gM :silent make\|redraw!\|:if len(getqflist())\|:botright copen 3\|else\|ccl\|endif\|cc<CR>
+nnoremap gG :grep '\b<cword>\b'<CR>\|:if len(getqflist())\|:botright copen 3\|else\|ccl\|endif\|cc<CR>
 cnoremap w!! w !sudo tee > /dev/null %
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
@@ -49,6 +50,7 @@ set smartcase
 set hlsearch
 set incsearch
 set diffopt+=iwhite
+set grepprg=git\ exec\ git\ grep\ -n
 
 " command
 set showcmd
