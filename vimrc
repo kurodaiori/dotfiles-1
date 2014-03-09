@@ -89,6 +89,8 @@ au FileType xml setl omnifunc=xmlcomplete#CompleteTags
 " perl
 au FileType perl :compiler perl
 let g:perl_compiler_force_warnings = 0
+let &l:path = './lib,./blib/lib,./blib/arch,' . &l:path
+let $PERL5LIB = substitute(&l:path, ',', ':', 'g')
 au BufNewFile,BufRead *.psgi setl filetype=perl
 au BufNewFile,BufRead *.mt,*.tt setl filetype=xhtml
 
