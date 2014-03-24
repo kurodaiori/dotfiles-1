@@ -35,10 +35,10 @@ tags
 # Packages
 *.egg
 *.egg-info
-dist
-build
-eggs
-parts
+#dist
+#build
+#eggs
+#parts
 #bin
 develop-eggs
 .installed.cfg
