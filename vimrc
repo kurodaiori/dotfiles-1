@@ -21,12 +21,7 @@ if v:version >= 704 || has("patch550")
     set fo+=j
 endif
 
-let v:errmsg = ""
-silent! colorscheme lucius
-if v:errmsg == ""
-    LuciusLightHighContrast
-    "LuciusDarkHighContrast
-endif
+silent! colorscheme github
 
 " key behaviour
 source $VIMRUNTIME/macros/matchit.vim

@@ -7,6 +7,7 @@ do
     bn="$(basename "$f")"
     case "$bn" in
         INSTALL ) bn="";; # This installer.
+        README.md ) bn="";; # README
         bashrc ) [ "$(uname)" = "Linux" ] && bn="bash_aliases";;
     esac
     [ "$bn" != "" ] && $ln "$f" "$HOME/.$bn"
