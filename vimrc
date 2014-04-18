@@ -42,6 +42,7 @@ nnoremap <C-p> "*p
 nnoremap <C-l> <C-l>:syntax sync fromstart<CR>
 vnoremap <C-w><C-]> "vy:stj <C-r>v<CR>
 vnoremap <C-w>} "vy:ptag <C-r>v<CR>
+vnoremap gE s<C-r>=<C-r>"<CR><Esc>
 
 " search
 set wrapscan
