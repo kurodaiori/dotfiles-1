@@ -8,14 +8,11 @@ sub new {
     my $self = bless {
         %args,
     }, $class;
-    return $self->init;
+    return $self->_init;
 }
 
-sub init {
+sub _init {
     my $self = shift;
-
-    # TODO: initialize
-
     return $self;
 }
 
