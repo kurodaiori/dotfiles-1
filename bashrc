@@ -81,8 +81,7 @@ PS1='\[\e[0m\]\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ ';
 type -P pyenv >/dev/null && eval "$(pyenv init -)"
 
 #ruby
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+type -P rbenv >/dev/null && eval "$(rbenv init -)"
 
 #php
 if [ -f $HOME/.phpenv/bin/phpenv ]; then
