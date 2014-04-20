@@ -97,7 +97,7 @@ au FileType html,xhtml setl noai ts=2 sw=2 sts=2 ofu=htmlcomplete#CompleteTags
 au FileType css setl omnifunc=csscomplete#CompleteCSS
 
 " javascript
-au FileType javascript setl ofu=javascriptcomplete#CompleteJS
+au FileType javascript setl ts=2 sw=2 sts=2 ofu=javascriptcomplete#CompleteJS
             \| setl makeprg=jshint\ %
             \| setl efm=%f:\ line\ %l\\,\ col\ %c\\,\ %m,%-G,%-G%s\ error,%-G%s\ errors
 
