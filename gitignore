@@ -50,3 +50,9 @@ pip-log.txt
 .coverage
 .tox
 *.class
+
+/emacs.d/auto-save-list
+/emacs.d/elisp/elpa
+/emacs.d/elisp/el-get
+/emacs.d/eshell
+
