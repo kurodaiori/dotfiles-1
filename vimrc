@@ -84,6 +84,7 @@ au FileType xml setl omnifunc=xmlcomplete#CompleteTags
 
 " perl
 au FileType perl :compiler perl
+            \| setl ep=perltidy
 let g:perl_compiler_force_warnings = 0
 let &l:path = './lib,./blib/lib,./blib/arch,' . &l:path
 let $PERL5LIB = substitute(&l:path, ',', ':', 'g')
