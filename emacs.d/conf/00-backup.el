@@ -3,3 +3,6 @@
             backup-directory-alist))
 
 (setq message-log-max 10000)
+
+(setq backup-inhibited t)
+(setq delete-auto-save-default t)
