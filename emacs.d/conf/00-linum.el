@@ -3,4 +3,5 @@
  '(global-linum-mode t)
  '(line-number-mode t))
 
-;(global-set-key (kbd "C-cC-l") 'toggle-truncate-lines)
+(setq require-file-newline t)
+(setq mode-require-final-newline t)
