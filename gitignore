@@ -55,4 +55,6 @@ pip-log.txt
 /emacs.d/elisp/elpa
 /emacs.d/elisp/el-get
 /emacs.d/eshell
+/emacs.d/themes
+/emacs.d/backup
 
