@@ -122,7 +122,10 @@ let g:filetype_asp = "aspvbs"
 au FileType aspvbs setl ts=4 sw=4 sts=4 noet
 
 " go
-set rtp+=$GOROOT/misc/vim
+let g:goroot = substitute(system('go env GOROOT'), '\n$', '', '')
+if g:goroot != ''
+    let &rtp = g:goroot . '/misc/vim,' . &rtp
+endif
 au BufNewFile,BufRead *.go setl filetype=go ts=4 sw=4 sts=4 noet
             \| setl makeprg=go\ fmt\ %
             \| setl errorformat=%f:%l:%c:\ %m,%-G,%-G\#%s,%-Gexit\ status\ %s
