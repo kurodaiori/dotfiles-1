@@ -30,6 +30,7 @@ bind index zm collapse-all
 macro index <esc><esc> "<limit>all\n<untag-pattern>~T\n"
 bind index t tag-thread
 bind index T tag-entry
+bind index \CT tag-pattern
 set quit = no
 
 # gmail(imap)
