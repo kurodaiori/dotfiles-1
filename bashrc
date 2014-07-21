@@ -55,6 +55,8 @@ case "$(uname)" in
     ;;
 esac
 
+export EDITOR=vim
+
 export PATH=~/bin:$PATH # user scripts
 export VTE_CJK_WIDTH=1 #ambiwidth
 
@@ -73,20 +75,21 @@ PS1='\[\e[0m\]\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ ';
 # insert escape char on gnu screen sessions.
 [[ $TERM = screen* ]] && [ -z "$TMUX" ] && PS1="`printf '\[\033k\033\134\134\]'`$PS1"
 
-#python
-type -P pyenv >/dev/null && eval "$(pyenv init -)"
-
-#ruby
-type -P rbenv >/dev/null && eval "$(rbenv init -)"
-
 #php
 if [ -f $HOME/.phpenv/bin/phpenv ]; then
 	export PATH=$PATH:$HOME/.phpenv/bin
 	eval "$(phpenv init -)"
 fi
 
-#perl
-type -P plenv >/dev/null && eval "$(plenv init -)"
+for e in pl py rb; do
+	type -P "$e" >/dev/null && eval "$("$e"env init -)"
+done
+
+rehash () {
+	plenv rehash
+	pyenv rehash
+	rbenv rehash
+}
 
 #go
 [ -f $HOME/.gvm/scripts/gvm ] && . $HOME/.gvm/scripts/gvm
