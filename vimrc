@@ -112,6 +112,8 @@ au FileType python setl ofu=pythoncomplete#Complete
 " sh
 let g:is_bash = 1
 au FileType sh setl ts=4 sw=4 sts=4 noet
+            \| setl makeprg=checkbashisms\ -f\ %\ 2>&1\ \\\\|sed\ 'n;d'
+            \| setl efm=possible\ bashism\ in\ %f\ line\ %l\ \(%m\):
 
 " php
 au FileType php setl ofu=phpcomplete#CompletePHP
