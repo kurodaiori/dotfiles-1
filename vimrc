@@ -13,7 +13,7 @@ set scrolloff=3
 set wildmode=list,full
 set title
 set fdm=marker
-set tags+=tags;
+set tags^=tags;
 set cscopetag
 
 set fo=1cqmnB
