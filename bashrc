@@ -57,6 +57,9 @@ esac
 
 export EDITOR=vim
 
+# Enable (i-search) when interactive shell
+[[ $- == *i* ]] && stty -ixon
+
 export PATH=~/bin:$PATH # user scripts
 export VTE_CJK_WIDTH=1 #ambiwidth
 
