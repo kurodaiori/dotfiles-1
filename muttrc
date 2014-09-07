@@ -119,8 +119,14 @@ set reverse_alias
 set query_command = "contacts -Sf '%e'$'\t''%n' '%s' | sed 's/,//'"
 bind editor <Tab> complete-query
 
-# url
-macro pager \Cu "|urlview<enter>"
+# pipe as decode
+set pipe_decode = yes
+
+## url
+macro pager \Cu "<pipe-message>urlview<enter>"
+
+## clipboard
+macro pager y "<pipe-message>pbcopy && echo 'Yanked to the clipboard'<enter>"
 
 # tag
 set auto_tag = yes
