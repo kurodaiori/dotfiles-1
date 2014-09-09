@@ -1,0 +1,10 @@
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set number
+set ruler
+set searchincr
+set showmatch
+
+" retab
+map  1G!G pr -te4
