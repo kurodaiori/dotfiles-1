@@ -15,6 +15,8 @@ set title
 set fdm=marker
 set tags^=tags;
 set cscopetag
+let mapleader=","
+set lazyredraw
 
 set fo=1cqmnB
 if v:version >= 704 || has("patch550")
@@ -27,7 +29,9 @@ silent! colorscheme github
 source $VIMRUNTIME/macros/matchit.vim
 set backspace=2
 set virtualedit=all
+set nrformats=
 nnoremap <Leader>w :set invwrap<CR>:set wrap?<CR>
+nnoremap <Leader>d :!(cd "$(dirname $(realpath %))" && git diff -- "$(basename %)")<CR>
 nnoremap gM :silent make\|redraw!\|:if len(getqflist())\|:botright copen 3\|else\|ccl\|endif\|cc<CR>
 nnoremap gG :grep '\b<cword>\b'<CR>\|:if len(getqflist())\|:botright copen 3\|else\|ccl\|endif\|cc<CR>
 cnoremap w!! w !sudo tee > /dev/null %
