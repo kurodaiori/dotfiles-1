@@ -30,6 +30,12 @@ case "$(uname)" in
             . `brew --prefix git`/etc/bash_completion.d/git-prompt.sh
         fi
 
+        # gnubin
+        if [ -d `brew --prefix coreutils`/libexec/gnubin ]; then
+            export PATH="`brew --prefix coreutils`/libexec/gnubin:$PATH"
+            alias ls="ls --color"
+        fi
+
         # Mac2Mac ssh 
         export LANG=ja_JP.UTF-8
 
