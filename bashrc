@@ -67,6 +67,7 @@ export EDITOR=vim
 [[ $- == *i* ]] && stty -ixon
 
 export PATH=~/bin:$PATH # user scripts
+[ -f $HOME/.bash_functions ] && . $HOME/.bash_functions
 export VTE_CJK_WIDTH=1 #ambiwidth
 
 # bash history settings
@@ -93,12 +94,6 @@ fi
 for e in pl py rb; do
 	type -P "$e" >/dev/null && eval "$("$e"env init -)"
 done
-
-rehash () {
-	plenv rehash
-	pyenv rehash
-	rbenv rehash
-}
 
 #go
 [ -f $HOME/.gvm/scripts/gvm ] && . $HOME/.gvm/scripts/gvm
