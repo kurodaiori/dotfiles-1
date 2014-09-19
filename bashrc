@@ -92,7 +92,7 @@ if [ -f $HOME/.phpenv/bin/phpenv ]; then
 fi
 
 for e in pl py rb; do
-	type -P "$e" >/dev/null && eval "$("$e"env init -)"
+	type -P "${e}env" >/dev/null && eval "$("${e}env" init -)"
 done
 
 #go
