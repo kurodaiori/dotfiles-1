@@ -2,3 +2,4 @@ set editor='/usr/local/bin/mvim -f'
 set hlsearch
 set ignorecase
 hi Hint z-index:10000; font-size:14px; color:white; background-color:blue; padding:0 2px; position:absolute; font-family: Menlo, Consolas, Monaco, monospace;
+set gui=nonavigation
