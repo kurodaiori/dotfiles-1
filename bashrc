@@ -79,11 +79,13 @@ export PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_C
 
 export IGNOREEOF=3
 
+PS1=
+PS1=$PS1'\[\e[0m\]'
+# show status notification
+PS1=$PS1'`[ $? -eq 0 ] && printf "\[\033[01;32m\]✔ " || printf "\[\033[01;31m\]✘ "`'
+PS1=$PS1'\[\e[0m\]'
 # show current branch.
-PS1='\[\e[0m\]\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ ';
-
-# insert escape char on gnu screen sessions.
-[[ $TERM = screen* ]] && [ -z "$TMUX" ] && PS1="`printf '\[\033k\033\134\134\]'`$PS1"
+PS1=$PS1'\u:\h \W$(__git_ps1 "[%s]" 2>/dev/null)\$ '
 
 #php
 if [ -f $HOME/.phpenv/bin/phpenv ]; then
@@ -97,3 +99,5 @@ done
 
 #go
 [ -f $HOME/.gvm/scripts/gvm ] && . $HOME/.gvm/scripts/gvm
+
+true
