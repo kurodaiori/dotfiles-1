@@ -86,7 +86,7 @@ hdr_order subject from to cc date
 
 # show index
 set pager_index_lines = 6
-set index_format = "%4C %Z %{%m/%d} %-15.15L (%?X?〇%2X&%4c?) %?M?+-- %2M msgs:&?%s%?M? %|-&?"
+set index_format = "%4C %Z %{%m/%d} %-15.15L (%?X?📂 %2X&%4c?) %?M?+-- %2M msgs:&?%s%?M? %|-&?"
 
 # show mail
 alternative_order text/plain text/html
