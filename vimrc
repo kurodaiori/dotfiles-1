@@ -115,6 +115,10 @@ au FileType python setl ofu=pythoncomplete#Complete
 
 " sh
 let g:is_bash = 1
+if !exists("b:sh_indent_options")
+   let b:sh_indent_options = {}
+endif
+let b:sh_indent_options['case-labels'] = 0
 au FileType sh setl ts=4 sw=4 sts=4 noet
             \| setl makeprg=checkbashisms\ -f\ %\ 2>&1\ \\\\|sed\ 'n;d'
             \| setl efm=possible\ bashism\ in\ %f\ line\ %l\ \(%m\):
